@@ -1,0 +1,23 @@
+.css-navbar {
+  width: auto;
+  height: 40px;
+  padding: 10px;
+  margin: 10px 0px 5px 0px;
+}
+.ul-css-navbar{
+gap: 4rem;
+}
+
+.dropdown-item {
+  margin: 0px 2px 1px 0px;
+  padding: 3px 5px 1px 5px;
+  color: #b9b4b4 ;
+
+}
+.dropdown-menu{
+  background-color: #212529;
+  color: black;
+}
+.dropdown-item:hover {
+  color: wheat;
+}
