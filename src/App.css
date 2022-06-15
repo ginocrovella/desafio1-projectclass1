@@ -1,0 +1,15 @@
+.body {
+  background-color: antiquewhite;
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 30px;
+}
+
+.imgprincipal {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px 15px 10px;
+}
+
