@@ -1,18 +1,48 @@
 import React from "react";
 import { useState } from "react";
 import ItemCount from "./ItemCount";
+import { useEffect } from "react";
+import ItemList from "../../components/ItemList";
+
 
 const ItemListContainer = ({greeting, children}) => {
 
-  const handleAdd = () => {
-  console.log("Se agregó al carrito")
-}
+  const muebles = [
+    { id:1, categoria:"racks", nombre:"Rack H Puertas", precio: 9000, imagen: '/img/mueble 5.jpg'},
+    { id:2, categoria:"racks", nombre:"Rack H Simple", precio: 7500, imagen: '/img/estandar 1.jpg'},
+    { id:3, categoria:"racks", nombre:"Rack H Plus", precio: 12000, imagen: '/img/rackplus1.jpg'},
+    // { id:4, categoria:"mesas de luz", nombre:"Escandinava con Puertas", precio: 5500, imagen: '/mesadeluz-cocobolo.png'},
+    // { id:5, categoria:"mesas de luz", nombre:"High Cajones", precio: 9500, imagen: '/mesadeluz-cajon.png'},
+    // { id:6, categoria:"mesas de luz", nombre:"Escandinava Simple", precio: 5500, imagen: '/mesadeluz-negra.jpg'},
+    // { id:7, categoria:"cocina", nombre:"Vajillero DC", precio: 11000, imagen: '/vajillero1.png'},
+    // { id:8, categoria:"cocina", nombre:"Combo personalizado 1", precio: 15000, imagen: '/cocina 4.jpg'},
+    // { id:9, categoria:"cocina", nombre:"Combo personalizado 2", precio: 20000, imagen: '/cocina5.png'} 
+  ]
 
+  const [data, setData] = useState([]);
+  
+  const task = new Promise((res, rej) => {
+    setTimeout(() => {
+      res(muebles)
+    }, 2000);
+  })
+
+  useEffect(() => {
+    task 
+      .then(res=> setData(res))
+      .catch(rej=> console.log(rej))
+  }, [])
+
+  const handleAdd = (count) => {
+  console.log(`Se agrego al carrito ${count} productos`)
+}
+  console.log(data);
   return (
     <div>
       {children}
-      <p>{greeting}</p>
-    <ItemCount handleAdd={handleAdd} initialStock={1} />
+      {/* <p>{greeting}</p> */}
+    <ItemList products={data}/>
+    <ItemCount handleAdd={handleAdd} initialStock={1}/>
     </div>
     
   )
@@ -22,21 +52,96 @@ export default ItemListContainer;
 
 
 
+// EJEMPLO DE LA CLASE 6 ASYNC - AWAIT - FETCH
+// OBTENGO TODOS LOS PRODUCTOS
+
+// const ItemListContainer = ({greeting}) => {
+
+//   const [productos, setProductos] = useState(null)
+
+//   useEffect(() => {
+//     const getProductos = async() => {
+//       try {
+//         const response = await fetch('https://fakestoreapi.com/products');
+
+//         const data = await response.json();
+//         console.log(data);
+//         setProductos(data);
+//       } catch (error) {
+//         console.log("Hubo un error: ");
+//         console.log(error);
+//       }
+//     }
+//     getProductos()
+//   }, [])      Si saco los corchetes se renderiza constantemente!!!
+//   console.log(productos);
+
+//   return (
+//     <div>
+//       <p>{greeting}</p>
+//       <ItemList products={productos}/>
+//     </div>
+//   )
+// };
+
+// export default ItemListContainer;
 
 
+// OBTENGO PRODUCTOS INDIVIDUALES 
+//   useEffect(() => {
+//     const getProductos = async() => {
+//       try {
+//         const response = await fetch('https://fakestoreapi.com/products/1');
+
+// ADD NEW PRODUCT 
+// useEffect(() => {
+//     const getProductos = async() => {
+//       try {
+//         const response = await fetch('https://fakestoreapi.com/products' , {
+        //     method: "POST",
+        //     body: JSON.stringify(
+        //         {
+        //             title: 'Producto de Coder',
+        //             price: 13.5,
+        //             description: 'lorem ipsum set',
+        //             image: 'https://i.pravatar.cc',
+        //             category: 'electronic'
+        //         }
+        //     )
+        // })
 
 
+// ACTIVIDAD CLASE 6 CON APIs
 
+//   const PokemonContainer = () => {
+//     const [products, setProducts] = useState(null);
+//   }
 
+//   useEffect(() => {
+//     const getProducts = async () => {
+//       try {
+//       const response = await fetch(
+//         'https://fakestoreapi.com/products?limit=10'
+//         );
+//         const data = await response.json();
+//         setProducts(data);
+//       } catch {}
+//     };
+//     getProducts();
+//   }, []);
 
+//   return (
+//     <div>
+//       (products &&
+//         products.map((product) => {
+//           return <p key={product.id}>{product.title}</p>;
+//         })
+//     </div>
+//       );
+//     };
 
-
-
-
-
-
-
-
+// export default PokemonsContainer;
+      
 
 
 
@@ -54,8 +159,8 @@ export default ItemListContainer;
 //     {id:3 , nombre: 'producto3', precio:400},
 //   ]
 //   const task = new Promise((res, rej) => {
-//     setTimeout(() => {
-//       resolve(productos)
+//     setTimeOut(() => {
+//       res(productos)
 //     }, 2000);
 //   })
 

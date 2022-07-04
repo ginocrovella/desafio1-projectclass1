@@ -1,47 +1,57 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './containers/ItemListContainers';
-import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemDetail from './components/ItemDetail';
+import ItemDetailContainer from './containers/ItemListContainers/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
-  const [containerVisible, setContainerVisible] = useState(true)
-  
-  const onHideContainer = () => {
-    setContainerVisible(false)
-  }
+
   return (
-  <div className='body'>
-    <div className="titulo">
-        <h1>MUEBLES DISEÑO CÚBICO</h1>
-    </div>
+  // <BrowserRouter>
+    <div className='body'>
+      <div className="titulo">
+          <h1>MUEBLES DISEÑO CÚBICO</h1>
+      </div>
 
-  <NavBar />
-
+    <NavBar />
+    {/* <Routes>
+      <Route path='/' element={<ItemListContainer/>} />
+      <Route path='/category/:categoryId' element={<ItemListContainer/>} /> 
+      <Route path='/detail/:productId' element={<ItemDetailContainer/>}></Route>
+      <Route path='*' element={<NotFound/>} />
+    </Routes> */}
     <div className='imgprincipal'>
-      <img src="/assets/render.jpg" alt="render principal" />
+        <img src="/assets/render.jpg" alt="render principal" />
     </div>
-    {containerVisible ?    // CONTAINER VISIBLE ?
-      <ItemListContainer greeting={""}>    
-        <div class="boton-registro">
-        <div id="registrar">
-          <button class="btn btn-dark btn-registration" type="submit" id="btnRegistrar">Clickeá y registrate</button>
-        </div>
-        </div>
-      </ItemListContainer>
-      :
-      null                 // CIERRO CONTAINER VISIBLE
-  }
-          
-  </div>
+      
+    {/* <ItemListContainer greeting={""}>    
+      <div className="boton-registro">
+      <div id="registrar">
+        <button className="btn btn-dark btn-registration" type="submit" id="btnRegistrar">Clickeá y registrate</button>
+      </div>
+      </div>
+    </ItemListContainer> */}
+        <ItemDetailContainer/>  
+    </div>
+  // </BrowserRouter>
   );
 }
 
 export default App;
 
 
+  // const [containerVisible, setContainerVisible] = useState(true)    
+  
+  // const onHideContainer = () => {
+  //   setContainerVisible(false)
+  // }         LO SACO PARA LIMPIAR EL CODIGO
 
-
+  // {containerVisible ?    CONTAINER VISIBLE ?
+  // :
+  // null                CIERRO CONTAINER VISIBLE
 
 
 
