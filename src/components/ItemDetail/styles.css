@@ -1,0 +1,14 @@
+.cardProducts{
+    flex-direction: row;
+    padding: 17px;
+    margin-top: 3rem;
+    width: 50rem;
+    height: 21rem;
+    left: 17rem;
+}
+.card-body{
+    margin-top: -21px;
+}
+.productDescription{
+    font-size: 21px;
+}

@@ -27,13 +27,13 @@ function App() {
         <img src="/assets/render.jpg" alt="render principal" />
     </div>
       
-    {/* <ItemListContainer greeting={""}>    
-      <div className="boton-registro">
+     
+    <div className="boton-registro">
       <div id="registrar">
         <button className="btn btn-dark btn-registration" type="submit" id="btnRegistrar">Clickeá y registrate</button>
       </div>
-      </div>
-    </ItemListContainer> */}
+    </div>
+
         <ItemDetailContainer/>  
     </div>
   // </BrowserRouter>

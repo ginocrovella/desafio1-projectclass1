@@ -17,10 +17,12 @@
 /* CLASS BUTTON REGISTRATION */ 
 .boton-registro{
   text-align: center;
-  margin-bottom: 10px;
+  font-size: 1.6rem;
+
 }
 .btn-registration {
-  font-size: 25px;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
   text-align: center;
   background-color: #212529;
   color: #b9b4b4; 

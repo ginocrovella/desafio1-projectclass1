@@ -23,9 +23,9 @@ const ItemDetailContainer = () => {
     // }, [])
 
     const muebles = [
-        { id:1, categoria:"racks", nombre:"Rack H Puertas", precio: 9000, imagen: '/img/mueble 5.jpg'},
-        { id:2, categoria:"racks", nombre:"Rack H Simple", precio: 7500, imagen: '/img/estandar 1.jpg'},
-        { id:3, categoria:"racks", nombre:"Rack H Plus", precio: 12000, imagen: '/img/rackplus1.jpg'},
+        { id:1, categoria:"Racks", nombre:"Escandinavo H", precio: 9000, imagen: '/img/mueble 5.jpg', descripcion:"Mueble sofisticado diseñado para la comodidad de cualquier espacio de tu hogar. Tu dormitorio, comedor, living, ya no serán los mismos.."},
+        { id:2, categoria:"Racks", nombre:"Rack H Simple", precio: 7500, imagen: '/img/estandar 1.jpg', descripcion:""},
+        { id:3, categoria:"Racks", nombre:"Rack H Plus", precio: 12000, imagen: '/img/rackplus1.jpg', descripcion:""},
         // { id:4, categoria:"mesas de luz", nombre:"Escandinava con Puertas", precio: 5500, imagen: '/mesadeluz-cocobolo.png'},
         // { id:5, categoria:"mesas de luz", nombre:"High Cajones", precio: 9500, imagen: '/mesadeluz-cajon.png'},
         // { id:6, categoria:"mesas de luz", nombre:"Escandinava Simple", precio: 5500, imagen: '/mesadeluz-negra.jpg'},
