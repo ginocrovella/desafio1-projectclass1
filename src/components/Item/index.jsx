@@ -1,24 +1,32 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import './styles.css'
-import ItemCount from '../../containers/ItemListContainers/ItemCount'
+import { useNavigate } from 'react-router-dom'
 
 const Item = ({product}) => {
-    const {nombre, precio, imagen} = product
-    const handleAdd = (count) => {
-        console.log(`Se agrego al carrito ${count} productos`)
-        }
+
+    const navigate = useNavigate();
+
+    const handleDetail = () => {
+        navigate(`/detail/${product.id}`)
+    };
+
+    const {nombre, imagen} = product
+
     return (
-        <Card className={"cards"}>
-            <Card.Img className={"images"} variant="top" src={imagen} />
-            <Card.Body>
-                <Card.Title>{nombre}</Card.Title>
-                <Card.Text>
-                    Precio:{precio}
-                </Card.Text>
-            </Card.Body>
-            <ItemCount handleAdd={handleAdd} initialStock={1}/>
-        </Card>
+        <div>
+            <Card className={"cards"}>
+                <Card.Img className='itemimages' variant="top" src={imagen}  />
+                <Card.Body className='cardbody'>
+                    <Card.Title className='cardtitle'>{nombre}</Card.Title>
+                    <Card.Text>
+                    </Card.Text>
+                    <div onClick={handleDetail}>
+                        <Button variant="primary" className='btn-dark'>Ver detalles</Button>  
+                    </div> 
+                </Card.Body>  
+            </Card>
+        </div>
     )
 }
 

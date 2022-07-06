@@ -1,29 +1,42 @@
 .body {
-  background-color: antiquewhite;
+  background-color: #e6e6e5a8;
+  padding-bottom: 2rem;
 }
 
 .container-fluid {
   padding-right: 0px;
   padding-left: 30px;
 }
+.titulo {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 0.7rem;
+}
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 35px;
+}
 
 .imgprincipal {
   display: flex;
   justify-content: center;
-  margin: 10px 10px 15px 10px;
+  margin: 20px 10px 15px 10px;
 }
-
 
 /* CLASS BUTTON REGISTRATION */ 
 .boton-registro{
   text-align: center;
-  font-size: 1.6rem;
 
 }
-.btn-registration {
-  margin-bottom: 10px;
+#btnRegistrar {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1.6rem;
   text-align: center;
   background-color: #212529;
-  color: #b9b4b4; 
+  color: #cfcfcf; 
+}
+#btnRegistrar:hover{
+  color: rgba(250, 235, 215, 0.86);
 }

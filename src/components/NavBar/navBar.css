@@ -9,17 +9,6 @@
       flex-direction: column;}
   }
 
-.titulo {
-  text-align: center;
-  margin-top: 13px;
-}
-
-h1 {
-  text-align: center;
-  color: black;
-  font-size: 35px;
-}
-
 .css-navbar {
   width: auto;
   height: 40px;
@@ -30,16 +19,11 @@ h1 {
 gap: 4rem;
 }
 
-.dropdown-item {
-  margin: 0px 2px 1px 0px;
-  padding: 3px 5px 1px 5px;
-  color: #b9b4b4 ;
+.linknavbar{
+  color: #b9b4b4;
+  text-decoration: none;
 }
-.dropdown-menu{
-  background-color: #212529;
-  color: black;
+.linknavbar:hover{
+  color: rgba(250, 235, 215, 0.854);
 }
-.dropdown-item:hover {
-  background-color: #212529;
-  color: antiquewhite;
-}
+

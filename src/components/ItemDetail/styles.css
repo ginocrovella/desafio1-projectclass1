@@ -5,10 +5,30 @@
     width: 50rem;
     height: 21rem;
     left: 17rem;
+    margin-bottom: 2rem;
 }
-.card-body{
-    margin-top: -21px;
+.card{
+    background-color: #d1cedf87;
 }
 .productDescription{
-    font-size: 21px;
+    font-size: 15px;
+}
+.cardproductscolum{
+    flex-direction: column;
+    margin-top: -21px;
+}
+.productPrecio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -6px;
+    margin-top: 0px;
+}
+.itemcount{
+    margin-top: -7px;
+}
+.terminate{
+    margin-top: 10px;
+}
+.btn-terminate{
+    margin-bottom: 9px;
 }

@@ -1,8 +1,23 @@
 .cards{
     width: 300px;
     height: 400px;
-    margin: 20px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+.card{
+    background-color: #c3c0d38c;
+}
+
+.cardtitle{
+    color: black;
+    font-size: 2rem;
+}
+.cardbody{
+    margin-top: 20px;
+}
+.itemimages{
+    width: 350px;
+    height: 220px;
 }
