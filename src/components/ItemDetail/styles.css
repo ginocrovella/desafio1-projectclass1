@@ -17,6 +17,9 @@
     flex-direction: column;
     margin-top: -21px;
 }
+.productTitle{
+    font-size: 40px;
+}
 .productPrecio{
     font-size: 20px;
     font-weight: bold;

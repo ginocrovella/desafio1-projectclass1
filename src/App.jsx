@@ -7,34 +7,36 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from './components/NotFound'
 import Cart from './containers/ItemListContainers/Cart/cart'
 import Home from './components/Home/Home';
+import ShopProvider from './context/ShopContext';
 
 function App() {
 
-  
-
   return (
+    <ShopProvider>
       <BrowserRouter>
-    <div className='body'>
-      <div className="titulo">
-          <h1>MUEBLES DISEÑO CÚBICO</h1>
-      </div>
+        <div className='body'>
+          <div className="titulo">
+            <h1>MUEBLES DISEÑO CÚBICO</h1>
+          </div>
       <NavBar />
+      
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/home' element={<Home/>} />
+        <Route path='/category/:categoryId' element={<ItemListContainer/>} />
+        <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='*' element={<NotFound/>} />
+      </Routes>
+      </div>
+      </BrowserRouter>
+    </ShopProvider>
     
-    <Routes>
-      <Route path='/home' element={<Home/>} />
-      <Route path='/category/:categoryId' element={<ItemListContainer/>} />
-      <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
-      <Route path='/cart' element={<Cart />} />
-      <Route path='*' element={<NotFound/>} />
-    </Routes>
-    </div>
-    </BrowserRouter>
     
-    
-  );
-}
-
-export default App;
+    );
+  }
+  
+  export default App;
 
 
 //   const [containerVisible, setContainerVisible] = useState(true)    

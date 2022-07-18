@@ -6,7 +6,7 @@ import { BsPlusSquare } from "react-icons/bs";
 import { BsDashSquare } from "react-icons/bs";
 
 
-const ItemCount = ({handleAdd, initialStock, onConfirm, maxQuantity}) => {
+const ItemCount = ({initialStock, onConfirm, maxQuantity}) => {
 
     const  [count, setCount] = useState(initialStock);
 
@@ -24,14 +24,6 @@ const ItemCount = ({handleAdd, initialStock, onConfirm, maxQuantity}) => {
         } 
     };
 
-    const handleConfirm = () => {
-        if(count <= maxQuantity) {
-            onConfirm(count)
-        } else {
-            alert("Count > maxQuantity")
-        }
-    }
-
   return (
     <div>          
         <p className='countNumber'>{count}</p>
@@ -42,7 +34,7 @@ const ItemCount = ({handleAdd, initialStock, onConfirm, maxQuantity}) => {
             <BsDashSquare size={'30'} className=' dec'
             onClick={() => onDecrement(count)} />
         </div>
-            <Button onClick={()=> handleConfirm(count)} id="buttoncart1" className='btn btn-dark'> AGREGAR AL CARRITO </Button>
+            <Button onClick={()=> onConfirm(count)} id="buttoncart1" className='btn btn-dark'> AGREGAR AL CARRITO </Button>
     </div>                    
             
         

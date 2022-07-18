@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import {CgShoppingCart} from 'react-icons/cg';
+import { Link } from "react-router-dom";
+import { Shop } from "../../../context/ShopContext";
 import './styles.css'
 
 const CartWidget = () => {
+
+    const {cart, getCartItems} = useContext(Shop);
+
     return (
-        <a href="index.html">
-        <CgShoppingCart size={23} className="cartcss" />
-        </a>
+        <div style={{display: "flex", color: "white", marginTop: 8}}>
+            <Link to={'/cart'}>
+            <CgShoppingCart size={23} className="cartcss"/>
+            </Link>
+            {cart.length > 0 && <p>{getCartItems()}</p>}
+        </div>
     );
 }
 

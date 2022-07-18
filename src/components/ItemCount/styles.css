@@ -42,4 +42,8 @@
 }
 .add{
   margin-inline: 8px ;
+  cursor: pointer;
+}
+.dec{
+  cursor: pointer;
 }
