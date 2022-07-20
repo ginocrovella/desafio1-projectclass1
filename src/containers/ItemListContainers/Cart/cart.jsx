@@ -19,7 +19,7 @@ const Cart = ({id}) => {
     <div>
       {cart.map(producto => {
       return (  
-        <Card key={producto.id} style={{ width: '18rem' }} >
+        <Card key={producto.id} style={{ width: '18rem'}}>
         <Card.Img variant="top" src={producto.imagen} alt={producto.nombre} /> 
         <Card.Body>
         <Card.Title>{producto.nombre}</Card.Title>

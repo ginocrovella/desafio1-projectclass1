@@ -1,4 +1,4 @@
-import React, { Children, createContext, useReducer, useState } from 'react'
+import React, { Children, createContext, useState } from 'react'
 
 export const Shop = createContext();
 
@@ -7,8 +7,6 @@ const ShopProvider = ({children}) => {
     // const [estadoA, setEstadoA] = useState("Valor por defecto")
 
     const [cart, setCart] = useState([]);
-    
-    // const [state, dispatch] = useReducer(reducer);
 
     // Agregar item al carrito, acorde a la cantidad
     const addItem = (producto, cantidad) => { 

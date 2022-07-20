@@ -4,6 +4,8 @@ import ItemCount from "../../components/ItemCount";
 import { useEffect } from "react";
 import ItemList from "../../components/ItemList";
 import { useParams } from "react-router-dom";
+import { collection, query, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 
 const ItemListContainer = ({greeting, children}) => {
@@ -26,21 +28,36 @@ const ItemListContainer = ({greeting, children}) => {
 
   const params = useParams();
 
-  const task = new Promise((res, rej) => {
-    setTimeout(() => {
-      res(muebles)
-    }, 2000);
-  });
+  
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const q = query(collection(db, "productos"));
+        const querySnapshot = await getDocs(q);
+        const productos = [];
 
-  useEffect( () => {
-    task 
-      .then(res=> setData(res))
-      .catch(rej=> console.log(rej))
-    }, []);
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, " => ", doc.data());
+          productos.push({id: doc.id, ...doc.data()})
+        });
+
+        // const response = await fetch('/category/');
+        // const data = await response.json()
+        if (productos.length === 0) {
+        setData(productos);
+        setMueblesFiltrados(productos);
+        }
+      } catch (error) {
+            console.log(error);
+        }
+    }
+    getProducts();
+  }, []);  
 
   useEffect( () => {
     if (params?.categoryId) {
-    const mueblesFiltrados = muebles.filter(mueble => mueble.categoria === params.categoryId)
+    const mueblesFiltrados = muebles.filter(product => product.categoria === params.categoryId)
     setMueblesFiltrados(mueblesFiltrados)
     } else {
       setMueblesFiltrados(muebles)
@@ -59,3 +76,15 @@ const ItemListContainer = ({greeting, children}) => {
   };
   
   export default ItemListContainer;
+
+      // const task = new Promise((res, rej) => {
+      //   setTimeout(() => {
+      //     res(muebles)
+      //   }, 2000);
+      // });
+    
+      // useEffect( () => {
+      //   task 
+      //     .then(res=> setData(res))
+      //     .catch(rej=> console.log(rej))
+      //   }, []);
