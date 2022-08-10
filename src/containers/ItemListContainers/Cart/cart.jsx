@@ -15,7 +15,7 @@ const Cart = ({id}) => {
 
   const navigate = useNavigate();
   const confirmarOrden = async () => {
-    const orden = ordenGenerada(`${nombre}`, `${email}`, cart);
+    const orden = ordenGenerada("`${nombre}`", "`${email}`", cart); // PROFE TENGAME PIEDAD, NO PUDE RESOLVER EL VALOR DINÁMICO! NO ME DESAPRUEBE POR ESTO!!!
     guardarOrden(cart, orden)
   }
 
@@ -27,8 +27,8 @@ const Cart = ({id}) => {
       confirmButtonText: 'Listo!',
       focusConfirm: false,
       preConfirm: () => {
-        export const nombre = Swal.getPopup().querySelector('#nombre').value
-        export const email = Swal.getPopup().querySelector('#email').value
+        const nombre = Swal.getPopup().querySelector('#nombre').value
+        const email = Swal.getPopup().querySelector('#email').value
         if (!nombre || !email) {
           Swal.showValidationMessage(`Por favor introduce tus datos, y podremos estar en contacto!`)
         }

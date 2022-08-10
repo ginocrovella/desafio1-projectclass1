@@ -7,8 +7,6 @@ const ordenGenerada = (nombre, email, cart) => {
         },
         items: cart 
         ,
-        total: total
-        ,
         createdAt: new Date().toLocaleString()
     }
 }
