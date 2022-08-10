@@ -1,10 +1,9 @@
-import React, { Children, createContext, useState } from 'react'
+import React, { Children, createContext, useState } from 'react';
+import Swal from 'sweetalert2';
 
 export const Shop = createContext();
 
 const ShopProvider = ({children}) => {
-
-    // const [estadoA, setEstadoA] = useState("Valor por defecto")
 
     const [cart, setCart] = useState([]);
 
@@ -30,6 +29,13 @@ const ShopProvider = ({children}) => {
 
     const cleanUp = () => {
         setCart([]);
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Tu carrito esta vacío',
+            showConfirmButton: false,
+            timer: 2000
+          })
     };
 
     const getCartItems = () => {
