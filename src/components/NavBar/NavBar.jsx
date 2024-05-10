@@ -3,8 +3,6 @@ import './navBar.css';
 import './CartWidget';
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { Shop } from "../../context/ShopContext";
 
 const NavBar = () => {
     
@@ -30,17 +28,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
-
-
-// DROPDOWN SIN MODIFICAR
- {/* <li className="nav-item"><a className="nav-link" aria-current="page" id="botonhome" href="index.html">Home</a></li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="view/catalogo.html" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">Catálogo</a>
-                                <ul className="dropdown-menu dropdown-item" id="botonracks" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><Link to={'/categor'}>Racks</Link></li>
-                                    <li><a className="dropdown-item" id="botonmdl" href="view/catalogo.html">Mesas de luz</a></li>
-                                    <li><a className="dropdown-item" id="botoncocina" href="view/catalogo.html">Cocina</a></li>
-                                </ul>
-                            </li> */}

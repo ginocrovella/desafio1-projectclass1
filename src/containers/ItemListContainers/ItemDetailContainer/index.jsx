@@ -14,7 +14,8 @@ const ItemDetailContainer = () => {
     const {productId} = useParams();
     console.log(productId)
 
-    const params = useParams();
+    // const params = useParams();
+    // console.log(params)
 
   useEffect(() => {
     const getProducts = async () => {

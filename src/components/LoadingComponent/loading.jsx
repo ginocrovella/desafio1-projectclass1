@@ -1,6 +1,6 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react'
+// import { useEffect } from 'react';
+// import { useState } from 'react'
 
 // const LoadingComponent = () => {
 
@@ -31,7 +31,6 @@ import { useState } from 'react'
 
 
 // EJEMPLO CLASE
-import React from 'react';
 import { Circles } from 'react-loader-spinner';
 
 

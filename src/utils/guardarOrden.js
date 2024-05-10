@@ -53,6 +53,7 @@ const guardarOrden = (cart, orden) => {
             } else {
                 let mensaje = ''
                 for (const producto of outOfStock) {
+                    // eslint-disable-next-line no-unused-vars
                     mensaje += `${producto.nombre}`
                 }
                 Swal.fire({

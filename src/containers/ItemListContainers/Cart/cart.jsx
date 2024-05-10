@@ -15,7 +15,7 @@ const Cart = ({id}) => {
 
   const navigate = useNavigate();
   const confirmarOrden = async () => {
-    const orden = ordenGenerada("`${nombre}`", "`${email}`", cart); // PROFE TENGAME PIEDAD, NO PUDE RESOLVER EL VALOR DINÁMICO! NO ME DESAPRUEBE POR ESTO!!!
+    const orden = ordenGenerada(cart); 
     guardarOrden(cart, orden)
   }
 

@@ -1,4 +1,4 @@
-import React, { Children, createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import Swal from 'sweetalert2';
 
 export const Shop = createContext();
@@ -25,7 +25,7 @@ const ShopProvider = ({children}) => {
 
     const removeItem = (id) => {    
         setCart(cart.filter(prod=>prod.id !== id))
-    }; 
+    };
 
     const cleanUp = () => {
         setCart([]);

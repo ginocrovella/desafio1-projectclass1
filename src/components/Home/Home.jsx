@@ -19,9 +19,8 @@ const Home = () => {
         return { login: login, email: email }
       }
     }).then((result) => {
-      Swal.fire(`
-        Login: ${result.value.login}
-        Email: ${result.value.email}
+      Swal.fire(`Login exitoso! Bienvenido/a!
+        ${result.value.login}
       `.trim())
     })
   }

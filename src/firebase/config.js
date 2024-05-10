@@ -9,7 +9,7 @@ console.log(process.env.REACT_APP_API_KEY);
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: (process.env.REACT_APP_API_KEY),
   authDomain: "dc-first.firebaseapp.com",
   projectId: "dc-first",
   storageBucket: "dc-first.appspot.com",

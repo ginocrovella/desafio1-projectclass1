@@ -16,31 +16,32 @@ const ItemListContainer = ({greeting, children}) => {
     const getProducts = async () => {
       try {
         const q = query(collection(db, "productos"));
-        const querySnapshot = await getDocs(q);
-        const muebles = [];
 
+        const querySnapshot = await getDocs(q);
+
+        const muebles = [];
+    
         querySnapshot.forEach((doc) => {
           muebles.push({id: doc.id, ...doc.data() })
         });
-        if (muebles.length > 0) {
+        if (!muebles.length) return setProductos([])
           if (categoryId) {
             setProductos(muebles.filter(item=>item.categoria.toLowerCase() === categoryId));
           } else {
             setProductos(muebles)
           }
-        }
-        
       } catch (error) {
       // agregar un sweet alert de error
         }
     }
     getProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryId]);  
       
   return (
       <div>
         {
-          productos.length !== 0 ?
+          productos.length ?
           <ItemList products={productos}/>
           :
           <RevolvingDot color="#00BFFF" height={100} width={100}  ariaLabel='Loading' />
@@ -50,3 +51,4 @@ const ItemListContainer = ({greeting, children}) => {
   };
   
   export default ItemListContainer;
+

@@ -10,7 +10,7 @@ const ItemList = ({products}) => {
   // const handleChangeState = () => {
   //   setEstadoA("Otro valor")
   // }
-
+ console.log(products);
   return (
     <ul>
         {products?.map(producto => {
