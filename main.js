@@ -15,26 +15,26 @@ console.log(nombre); */
 
 // DESTRUCTUTING DE ARRAYS
 const personajes = ["nautilus","amumu","master yi","ryze","kyle"]
-console.log(personajes[3]);
+// console.log(personajes[1]);
 
 const [primerPersonaje, segundoPersonaje, tercerPersonaje, ...restoPersonajes] = personajes;
-console.log(primerPersonaje);
-console.log(restoPersonajes);
+// console.log(segundoPersonaje);
+// console.log(restoPersonajes);
 
 
 // SPREAD OPERATOR - muy util cuando tenemos que hacer una copia
 const persona2= {
     ...persona1,
+    nombre: "Jose",
     sueldo: '23K USD'
 }
 
 const personajesCopia= [...personajes]
-
 console.log(persona2);
 
 
-// FUNCION MAP, FIND
-/* const personajesProcesados = personajes.map(personajes => {
-    return <p>$(personaje)</p>
-})
-console.log(personajesProcesados); */ 
+// // FUNCION MAP, FIND
+// const personajesProcesados = personajes.map(personajes => {
+//     return <p>$(personaje)</p>
+// })
+// console.log(personajesProcesados); 

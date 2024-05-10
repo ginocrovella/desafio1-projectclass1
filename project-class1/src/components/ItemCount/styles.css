@@ -1,0 +1,49 @@
+.legend-form{
+    padding: 5px;
+    margin: 2px;
+  }
+  
+  .card-form {
+    background-color: rgba(239, 239, 239, 0.672);
+    width: 30rem;
+    height: 19rem;
+    margin: 15px 20px 10px 20px;
+    padding: 10px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+  }
+  
+  .card{
+    background-color: #212529;
+    text-align: center;
+    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.55);
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.55); 
+    border-style: none;
+  }
+.countNumber{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 2px;
+}
+.btn{
+  line-height: 1;
+}
+.btn-opc{
+  margin-top: -7px;
+  line-height: 1;
+}
+
+.btn-ad-dc{
+  color: #2e3338;
+  margin-bottom: 3px;
+}
+.add{
+  margin-inline: 8px ;
+  cursor: pointer;
+}
+.dec{
+  cursor: pointer;
+}

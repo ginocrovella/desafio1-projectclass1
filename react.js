@@ -1,6 +1,6 @@
 // En Terminal, introducimos INSTALL -G CREATE-REACT-APP , e instalamos el paquete
 
-// Segundo, intriducimos CREATE-REACT-APP project-class1 
+// Segundo, introducimos CREATE-REACT-APP project-class1 
 
 
 // NPM START para levantar el proyecto, ubicados en CD PROJECT-CLASS1

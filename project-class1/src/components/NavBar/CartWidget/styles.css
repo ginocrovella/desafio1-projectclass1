@@ -1,0 +1,8 @@
+.cartcss {
+    color: grey;
+    margin-top: 5px;
+}
+
+.cartcss:hover {
+    color: rgb(190, 190, 190);
+}

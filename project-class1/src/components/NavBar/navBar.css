@@ -1,0 +1,29 @@
+* {
+  font-family: raleway;
+}
+
+@media (min-width: 500px) {
+  .navbar-expand-lg .navbar-collapse {
+      display: flex!important;
+      flex-basis: auto;
+      flex-direction: column;}
+  }
+
+.css-navbar {
+  width: auto;
+  height: 40px;
+  padding: 10px;
+  margin: 10px 0px 5px 0px;
+}
+.ul-css-navbar{
+gap: 4rem;
+}
+
+.linknavbar{
+  color: #b9b4b4;
+  text-decoration: none;
+}
+.linknavbar:hover{
+  color: rgba(250, 235, 215, 0.854);
+}
+
